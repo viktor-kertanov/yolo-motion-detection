@@ -1,0 +1,5 @@
+env/
+**/*.weights
+images/
+.vscode
+.DS_Store
