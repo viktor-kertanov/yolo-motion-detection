@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-img_to_detect = cv2.imread('images/testing/IMG_5549.jpg')
+img_to_detect = cv2.imread('images/testing/IMG_7396.jpg')
 img_height = img_to_detect.shape[0]
 img_width = img_to_detect.shape[1]
 
@@ -47,15 +47,13 @@ boxes_list = []
 confidences_list = []
 
 
-
-
 for odl in obj_detection_layers:
     for object_detection in odl:
         all_scores = object_detection[5:]
         predicted_class_id = np.argmax(all_scores)
         prediction_confidence = all_scores[predicted_class_id]
 
-        if prediction_confidence > 0.2:
+        if prediction_confidence > 0.05:
             predicted_class_label = class_labels[predicted_class_id]
             bounding_box = object_detection[0:4] * np.array([img_width, img_height, img_width, img_height])
             (box_center_x_pt, box_center_y_pt, box_width, box_height) = bounding_box.astype('int')

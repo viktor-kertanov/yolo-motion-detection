@@ -48,7 +48,7 @@ for odl in obj_detection_layers:
         predicted_class_id = np.argmax(all_scores)
         prediction_confidence = all_scores[predicted_class_id]
 
-        if prediction_confidence > 0.2:
+        if prediction_confidence > 0.3:
             predicted_class_label = class_labels[predicted_class_id]
             bounding_box = object_detection[0:4] * np.array([img_width, img_height, img_width, img_height])
             (box_center_x_pt, box_center_y_pt, box_width, box_height) = bounding_box.astype('int')
