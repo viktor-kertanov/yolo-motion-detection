@@ -7,3 +7,4 @@ videos/
 yolov4/darknet
 *.mp4
 *.mov
+*.gif
